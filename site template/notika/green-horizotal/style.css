@@ -55,7 +55,7 @@
 /*  1.  Theme default CSS
 /*----------------------------------------*/
 html, body {font-family: 'Roboto', sans-serif;font-weight:400;}
-body {background:#F6F8FA;}
+body {background:#dfe3e6;}
 .floatleft {float:left}
 .floatright {float:right}
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
@@ -505,6 +505,19 @@ ul.notika-menu-wrap li a{
 /*----------------------------------------*/
 /*  4.  status CSS
 /*----------------------------------------*/
+.testresult-inner{
+    margin-top:20px;
+    box-shadow: 1px 2px 1px 0px #c1c1c1;
+}
+
+.platform-icon{
+    min-width:70%;
+}
+
+.testresult-inner:hover{
+    background-color:#f1f1f1;
+}
+
 .wb-traffic-inner{
 	padding:20px;
 	background:#fff;
