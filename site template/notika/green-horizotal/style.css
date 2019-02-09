@@ -54,6 +54,7 @@
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
+html { overflow-y: scroll; }
 html, body {font-family: 'Roboto', sans-serif;font-weight:400;}
 body {background:#dfe3e6;}
 .floatleft {float:left}
@@ -508,6 +509,15 @@ ul.notika-menu-wrap li a{
 .testresult-inner{
     margin-top:20px;
     box-shadow: 1px 2px 1px 0px #c1c1c1;
+    background:#fff;
+    display:flex;
+    cursor: pointer;
+}
+
+.testresult-collapsable{
+    box-shadow: 1px 2px 1px 0px #c1c1c1;
+    background:#fff;
+    padding: 0px 20px 20px 20px;
 }
 
 .platform-icon{
