@@ -54,8 +54,9 @@
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
+html { overflow-y: scroll; }
 html, body {font-family: 'Roboto', sans-serif;font-weight:400;}
-body {background:#F6F8FA;}
+body {background:#dfe3e6;}
 .floatleft {float:left}
 .floatright {float:right}
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
@@ -505,6 +506,28 @@ ul.notika-menu-wrap li a{
 /*----------------------------------------*/
 /*  4.  status CSS
 /*----------------------------------------*/
+.testresult-inner{
+    margin-top:20px;
+    box-shadow: 1px 2px 1px 0px #c1c1c1;
+    background:#fff;
+    display:flex;
+    cursor: pointer;
+}
+
+.testresult-collapsable{
+    box-shadow: 1px 2px 1px 0px #c1c1c1;
+    background:#fff;
+    padding: 0px 20px 20px 20px;
+}
+
+.platform-icon{
+    min-width:70%;
+}
+
+.testresult-inner:hover{
+    background-color:#f1f1f1;
+}
+
 .wb-traffic-inner{
 	padding:20px;
 	background:#fff;
@@ -4627,7 +4650,7 @@ body.box-layout {
     top: 2px;
 }
 /*----------------------------------------*/
-/*  59. Notika custom scrollbar CSS
+/*  59. Notika jquery-ui scrollbar CSS
 /*----------------------------------------*/
 .mCS-light-1.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #00c292; }
 .mCS-light-1.mCSB_scrollTools .mCSB_draggerRail{ background-color: #ccc; }

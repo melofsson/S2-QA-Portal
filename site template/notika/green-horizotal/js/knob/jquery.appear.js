@@ -33,7 +33,7 @@
 
 			if (!fn) {
 
-				//trigger the custom event
+				//trigger the jquery-ui event
 				t.trigger('appear', settings.data);
 				return;
 			}
@@ -70,7 +70,7 @@
 					x + tw + ax >= a &&
 					x <= a + ww + ax) {
 
-					//trigger the custom event
+					//trigger the jquery-ui event
 					if (!t.appeared) t.trigger('appear', settings.data);
 
 				} else {

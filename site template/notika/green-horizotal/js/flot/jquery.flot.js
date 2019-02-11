@@ -2739,7 +2739,7 @@ Licensed under the MIT license.
                 }
             }
 
-            // Sort the legend using either the default or a custom comparator
+            // Sort the legend using either the default or a jquery-ui comparator
 
             if (options.legend.sorted) {
                 if ($.isFunction(options.legend.sorted)) {
