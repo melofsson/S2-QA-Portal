@@ -104,7 +104,7 @@
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                         <li><a href="#">Error message</a></li>
-                        <li><a href="#">Failing test</a></li>
+                        <li><a href="#">Failing testCase</a></li>
                         <li><a href="#">Browser</a></li>
                     </ul>
                 </div>
@@ -113,18 +113,18 @@
                 <!--TEST ERROR DIV-->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;" id="error-messages-div">
                 <!-- TEST RESULT START -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="test : ${tests}">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase : ${tests}">
                     <!--RESULT HEADER DIV ONE-->
-                    <div class="errormessages-inner wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30" data-toggle="collapse" data-parent="#accordion" th:href="'#' + ${test.id}" aria-expanded="false" aria-controls="${test.id}">
+                    <div class="errormessages-inner wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30" data-toggle="collapse" data-parent="#accordion" th:href="'#' + ${testCase.id}" aria-expanded="false" aria-controls="${testCase.id}">
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                             <div class="website-traffic-ctn">
-                                <h3>#<span th:text="${test.id}"/></h3>
+                                <h3>#<span th:text="${testCase.id}"/></h3>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class="website-traffic-ctn">
                                 <h5>ERROR MESSAGE</h5>
-                                <p th:text="${test.logMessage}"></p>
+                                <p th:text="${testCase.logMessage}"></p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -144,8 +144,8 @@
                     </div>
                     <!--RESULT HEADER DIV END-->
                         <!--RESULT DETAILED COLLAPSE DIV START-->
-                        <div th:id="${test.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body" th:text="${test.logMessage}">
+                        <div th:id="${testCase.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body" th:text="${testCase.logMessage}">
                                 </div>
                               </div>
                               <!--RESULT DETAILED COLLAPSE DIV END-->
@@ -158,16 +158,16 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;" id="failing-tests-div">
 
                     <!-- TEST RESULT START -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="test : ${tests}">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase : ${tests}">
                         <!--RESULT HEADER DIV ONE-->
-                        <div class="notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 testnames-inner" style="display:flex; align-items: center; justify-content: center;" data-toggle="collapse" data-parent="#accordion" th:href="'#test' + ${test.id}" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 testnames-inner" style="display:flex; align-items: center; justify-content: center;" data-toggle="collapse" data-parent="#accordion" th:href="'#testCase' + ${testCase.id}" aria-expanded="false" aria-controls="collapseTwo">
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 
-                                    <h3 style="margin-top:10px; margin-bottom:10px;">#<span th:text="${test.id}"/></h3>
+                                    <h3 style="margin-top:10px; margin-bottom:10px;">#<span th:text="${testCase.id}"/></h3>
 
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <h5 style=" margin-top:10px; margin-bottom:10px;" th:text="${test.shortName}">TEST NAME</h5>
+                                    <h5 style=" margin-top:10px; margin-bottom:10px;" th:text="${testCase.shortName}">TEST NAME</h5>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                 <div class="website-traffic-ctn">
@@ -184,8 +184,8 @@
                         </div>
                         <!--RESULT HEADER DIV END-->
                         <!--RESULT DETAILED COLLAPSE DIV START-->
-                        <div th:id="'test'+${test.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body" th:text="${test.fullName}">
+                        <div th:id="'testCase'+${testCase.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body" th:text="${testCase.fullName}">
                             </div>
                         </div>
                         <!--RESULT DETAILED COLLAPSE DIV END-->

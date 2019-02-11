@@ -1,12 +1,12 @@
 package se.soprasteria.s2qaportal.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import se.soprasteria.s2qaportal.model.Test;
+import se.soprasteria.s2qaportal.model.TestCase;
 
 import java.util.List;
 
-public interface TestRepository extends CrudRepository<Test,Long> {
+public interface TestRepository extends CrudRepository<TestCase,Long> {
 
-    List<Test> findAll();
+    List<TestCase> findAll();
 
 }

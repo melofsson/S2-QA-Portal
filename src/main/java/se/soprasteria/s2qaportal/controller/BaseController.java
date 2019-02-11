@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import se.soprasteria.s2qaportal.model.Test;
+import se.soprasteria.s2qaportal.model.TestCase;
 import se.soprasteria.s2qaportal.repository.TestRepository;
 
 @Component
@@ -21,22 +21,22 @@ public class BaseController implements ApplicationListener<ContextRefreshedEvent
     private void initData(){
         testRepository.deleteAll();
 
-        Test test1 = new Test("storeStartRentedSection","Error when trying to find an element by text [ Thriller ]","DemoBrowser");
+        TestCase testCase1 = new TestCase("storeStartRentedSection","Error when trying to find an element by text [ Thriller ]","DemoBrowser");
 
-        Test test2 = new Test("storeAssetDetailForEpisodeLoggedOut","Error when trying to find an element by text [ Tv-serier ]","DemoBrowser");
+        TestCase testCase2 = new TestCase("storeAssetDetailForEpisodeLoggedOut","Error when trying to find an element by text [ Tv-serier ]","DemoBrowser");
 
-        Test test3 = new Test("searchOverlay","Example logMessage of a test 3 that has never existed","DemoBrowser");
-        Test test4 = new Test("storeProviderFilterLoggedOut","Example logMessage of a test 4 that has never existed","DemoBrowser");
+        TestCase testCase3 = new TestCase("searchOverlay","Example logMessage of a test 3 that has never existed","DemoBrowser");
+        TestCase testCase4 = new TestCase("storeProviderFilterLoggedOut","Example logMessage of a test 4 that has never existed","DemoBrowser");
 
-        test1.setFullName("telia.playplus.crossplatform.videoOnDemand.store.StoreStart.storeStartRentedSection");
-        test2.setFullName("telia.playplus.crossplatform.videoOnDemand.store.StoreAssetDetailForEpisode.storeAssetDetailForEpisodeLoggedOut");
-        test3.setFullName("telia.playplus.crossplatform.search.SearchFunctions.searchOverlay");
-        test4.setFullName("telia.playplus.crossplatform.videoOnDemand.store.StoreProviderFilter.storeProviderFilterLoggedOut");
+        testCase1.setFullName("telia.playplus.crossplatform.videoOnDemand.store.StoreStart.storeStartRentedSection");
+        testCase2.setFullName("telia.playplus.crossplatform.videoOnDemand.store.StoreAssetDetailForEpisode.storeAssetDetailForEpisodeLoggedOut");
+        testCase3.setFullName("telia.playplus.crossplatform.search.SearchFunctions.searchOverlay");
+        testCase4.setFullName("telia.playplus.crossplatform.videoOnDemand.store.StoreProviderFilter.storeProviderFilterLoggedOut");
 
-        testRepository.save(test1);
-        testRepository.save(test2);
-        testRepository.save(test3);
-        testRepository.save(test4);
+        testRepository.save(testCase1);
+        testRepository.save(testCase2);
+        testRepository.save(testCase3);
+        testRepository.save(testCase4);
     }
 
 }

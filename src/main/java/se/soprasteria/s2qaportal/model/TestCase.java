@@ -13,7 +13,7 @@ import java.util.Objects;
 @Getter
 @ToString
 
-public class Test implements Serializable {
+public class TestCase implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,7 +24,7 @@ public class Test implements Serializable {
     private String platform;
     private String fullName;
 
-    public Test(String name, String logMessage, String platform){
+    public TestCase(String name, String logMessage, String platform){
         this.shortName = name;
         this.logMessage = logMessage;
         this.platform = platform;
@@ -33,8 +33,8 @@ public class Test implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Test test = (Test) o;
-        return Objects.equals(id, test.id);
+        TestCase testCase = (TestCase) o;
+        return Objects.equals(id, testCase.id);
     }
 
     public void setFullName(String fullName) {
