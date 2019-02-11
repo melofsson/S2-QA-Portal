@@ -55,7 +55,7 @@
 	$('#sa-image').on('click', function(){
 		swal({   
 			title: "Sweet!",   
-			text: "Here's a custom image.",   
+			text: "Here's a jquery-ui image.",   
 			imageUrl: "img/dialog/like.png" 
 		});
 	});
