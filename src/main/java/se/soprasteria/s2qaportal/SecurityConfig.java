@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
+                .withUser("s2qaportal").password(passwordEncoder().encode("portaltobe")).roles("USER")
                 .and()
                 .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
     }

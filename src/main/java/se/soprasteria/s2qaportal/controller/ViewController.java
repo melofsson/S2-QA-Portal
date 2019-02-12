@@ -7,22 +7,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import se.soprasteria.s2qaportal.repository.TestRepository;
 
 @Controller
-public class TestResultController {
+public class ViewController {
+
 
     private TestRepository testRepository;
 
-    public TestResultController (TestRepository testRepository) {
+    public ViewController (TestRepository testRepository) {
         this.testRepository = testRepository;
-    }
-
-    @GetMapping(value = {"/", "/index"})
-    public String getMessage(Model model) {
-        model.addAttribute("tests", testRepository.findAll());
-        return "index";
     }
 
     @RequestMapping("/login")
     public String login() {
         return "login";
+    }
+
+    @RequestMapping({ "/index", "/" })
+    public String getMessage(Model model) {
+        model.addAttribute("tests", testRepository.findAll());
+        return "index";
     }
 }
