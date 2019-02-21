@@ -18,32 +18,7 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>s3bucket-soprasteria-releases</id>
-            <url>s3://s3bucket-soprasteria-releases/</url>
-            <snapshots>
-                <enabled>false</enabled>
-                <updatePolicy>daily</updatePolicy>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-            </releases>
-        </repository>
-        <repository>
-            <id>s3bucket-soprasteria-snapshots</id>
-            <url>s3://s3bucket-soprasteria-snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-                <updatePolicy>daily</updatePolicy>
-            </releases>
-        </repository>
-    </repositories>
+
 
     <dependencies>
         <dependency>
@@ -121,15 +96,7 @@
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
-        <dependency>
-            <groupId>se.soprasteria.automatedtesting.webdriver</groupId>
-            <artifactId>webdriver-core</artifactId>
-            <version>4.0.2-SNAPSHOT</version>
-        </dependency>
-
     </dependencies>
-
-
 
     <build>
         <plugins>
@@ -138,13 +105,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <extensions>
-            <extension>
-                <groupId>org.kuali.maven.wagons</groupId>
-                <artifactId>maven-s3-wagon</artifactId>
-                <version>1.2.1</version>
-            </extension>
-        </extensions>
+
     </build>
 
 </project>
