@@ -46,7 +46,7 @@ public class ViewController {
 
     public FailedTest[] readFailedTestsFromJSON(){
         Gson gson = new Gson();
-        try (Reader reader = new FileReader("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/failedtests.json")) {
+        try (Reader reader = new FileReader("failedtests.json")) {
             return gson.fromJson(reader, FailedTest[].class);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
