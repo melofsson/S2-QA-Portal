@@ -72,6 +72,14 @@
 </head>
 
 <body>
+<div class="jiraOverlay" style="display: block;">
+    <div id="jiradiv" style="padding:50px">
+        <button th:onclick="'return closeJiraOverlay();'" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p> A good place to handle Jira functionality?</p>
+    </div>
+</div>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -81,7 +89,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#" id="header_title">S2 QA PORTAL</a>
+                        <img class="logo" src="/img/icons/kungfu_logo.png">
                     </div>
                 </div>
             </div>
@@ -97,58 +105,92 @@
             <!--LEFT SECTION END-->
             <!--MIDDLE SECTION START-->
             <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px">
-                <h1 id="main-section-title" style="float:left; padding-left:15px; margin:0;">FAILING TESTS</h1>
-                <div class="dropdown" style="float:right; padding-right:15px;">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Arrange by
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="margin-bottom:20px">
+
+
+                <h3 data-toggle="dropdown" class="dropdown-toggle" id="main-section-title" style="cursor:pointer; float:left; padding-left:15px; margin:0;">FAILING TESTS</h3><span style="cursor:pointer" class="caret"></span>
+                    <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
+                    <ul style="top:0; left:0;" class="dropdown-menu arrange-dropdown-menu">
                         <li><a href="#">Error message</a></li>
                         <li><a href="#">Failing test</a></li>
-                        <li><a href="#">Browser</a></li>
                     </ul>
+
+
                 </div>
-                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
 
                 <!--TEST ERROR DIV-->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;" id="error-messages-div">
                 <!-- TEST RESULT START -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase : ${tests}">
+                <div th:onmouseover="|showIcons(${errorCase.id})|" th:onmouseout="|hideIcons(${errorCase.id})|" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="errorCase : ${errorCases}">
+
+                    <div style="margin-top:6px; position: relative; height:100px" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                            <img data-toggle="dropdown" class="dropdown-toggle statusicon" th:id="'statusicon'+${errorCase.id}" src="/img/icons/goal.svg">
+                            <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
+                            <ul style="top:0; right:0; left:0;" class="dropdown-menu status-dropdown-menu">
+                                <li th:onclick="'return setStatusNotFixed(\'maindiv' + ${errorCase.id} + '\');'"><a id="notfixed" href="#" style="color: red;">Not fixed</a></li>
+                                <li th:onclick="'return setStatusWorkingOn(\'maindiv' + ${errorCase.id} + '\');'"><a id="workingon" href="#" style="color: orange;">Working on</a></li>
+                                <li th:onclick="'return setStatusResolved(\'maindiv' + ${errorCase.id} + '\');'"><a id="resolved" href="#" style="color: green;">Resolved</a></li>
+                            </ul>
+
+                    </div>
+
+                    <!---MAIN DIV-->
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                     <!--RESULT HEADER DIV ONE-->
-                    <div class="errormessages-inner wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30" data-toggle="collapse" data-parent="#accordion" th:href="'#' + ${testCase.id}" aria-expanded="false" aria-controls="${testCase.id}">
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <div th:id="'maindiv'+${errorCase.id}" class="color-fail errormessages-inner wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30" data-toggle="collapse" data-parent="#accordion" th:href="'#' + ${errorCase.id}" aria-expanded="false" aria-controls="${testCase.id}">
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                             <div class="website-traffic-ctn">
-                                <h3>#<span th:text="${testCase.id}"/></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="website-traffic-ctn">
-                                <h5>ERROR MESSAGE</h5>
-                                <p th:text="${testCase.logMessage}"></p>
+                                <p class="error-case-div" th:text="${errorCase.errorMessage}"></p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                             <div class="website-traffic-ctn">
-                                <h5>PLATFORMS / BROWSERS</h5>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="platform-icon" src="/img/icons/edge.svg"></div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="platform-icon" src="/img/icons/chrome.svg"></div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="platform-icon" src="/img/icons/safari.svg"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" th:each="platform : ${errorCase.failingPlatforms}">
+                                    <img class="platform-icon error-case-browser-icon" th:src="@{${'/img/icons/' + platform + '.svg'}}">
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                             <div class="website-traffic-ctn">
                                 <h5>TESTS</h5>
-                                <h1><span class="counter">25</span></h1>
+                                <h1><span th:text="${errorCase.failingTests.size()}" class="counter"></span></h1>
                             </div>
                         </div>
                     </div>
                     <!--RESULT HEADER DIV END-->
                         <!--RESULT DETAILED COLLAPSE DIV START-->
-                        <div th:id="${testCase.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body" th:text="${testCase.logMessage}">
+                        <div th:id="${errorCase.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Error message</h5></div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p style="word-break:break-word;" th:text="${errorCase.errorMessage}"></p></div>
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Failing tests</h5></div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding-bottom:15px;">
+                                            <div th:each="test : ${errorCase.failingTests}">
+                                            <span style="word-break:break-word;" th:text="${test}"></span></div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Jenkins URL</h5></div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><a style="word-break:break-word;cursor:pointer;" th:href="${errorCase.errorDescriptionURL}" th:text="${errorCase.errorDescriptionURL}"></a></div>
+                                    </div>
                                 </div>
-                              </div>
-                              <!--RESULT DETAILED COLLAPSE DIV END-->
+
+                        </div>
+                        <!--RESULT DETAILED COLLAPSE DIV END-->
+                </div>
+                    <!--MAIN-DIV-END-->
+                    <div style="margin-top:6px; position: relative; height:100px" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <img data-toggle="dropdown" class="dropdown-toggle jiraicon" th:id="'jiraicon'+${errorCase.id}" src="/img/icons/jira.png">
+                        <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
+                        <ul style="top:0; right:0; left:0;" class="dropdown-menu status-dropdown-menu">
+                            <li th:onclick="'return showJiraOverlay();'"><a id="createticket" href="#">Create ticket</a></li>
+                            <li th:onclick="'return showJiraOverlay();'"><a id="changeticket" href="#">Change ticket</a></li>
+                        </ul>
+
+                    </div>
+
                 </div>
                 <!-- TEST RESULT END -->
                 </div>
@@ -158,35 +200,64 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;" id="failing-tests-div">
 
                     <!-- TEST RESULT START -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase : ${tests}">
+                    <div th:onmouseover="|showIcons(${testCase.id})|" th:onmouseout="|hideIcons(${testCase.id})|" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase : ${failedTests}">
+
+                        <div style="margin-top:6px; position: relative; height:40px" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                            <img data-toggle="dropdown" class="dropdown-toggle statusicon" th:id="'statusicon'+${testCase.id}" src="/img/icons/goal.svg">
+                            <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
+                            <ul style="top:0; right:0; left:0;" class="dropdown-menu status-dropdown-menu">
+                                <li th:onclick="'return setStatusNotFixed(\'test' + ${testCase.id} + '\');'"><a id="notfixed-test" href="#" style="color: red;">Not fixed</a></li>
+                                <li th:onclick="'return setStatusWorkingOn(\'test' + ${testCase.id} + '\');'"><a id="workingon-test" href="#" style="color: orange;">Working on</a></li>
+                                <li th:onclick="'return setStatusResolved(\'test' + ${testCase.id} + '\');'"><a id="resolved-test" href="#" style="color: green;">Resolved</a></li>
+                            </ul>
+
+                        </div>
+
+                        <!---MAIN DIV-->
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+
                         <!--RESULT HEADER DIV ONE-->
-                        <div class="notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 testnames-inner" style="display:flex; align-items: center; justify-content: center;" data-toggle="collapse" data-parent="#accordion" th:href="'#testCase' + ${testCase.id}" aria-expanded="false" aria-controls="collapseTwo">
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <div th:id="'test'+${testCase.id}" class="notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 testnames-inner color-fail" style="display:flex; align-items: center; justify-content: center;" data-toggle="collapse" data-parent="#accordion" th:href="'#testCase' + ${testCase.id}" aria-expanded="false" aria-controls="collapseTwo">
 
-                                    <h3 style="margin-top:10px; margin-bottom:10px;">#<span th:text="${testCase.id}"/></h3>
-
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <h5 style=" margin-top:10px; margin-bottom:10px;" th:text="${testCase.shortName}">TEST NAME</h5>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                 <div class="website-traffic-ctn">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="platform-icon" src="/img/icons/edge.svg"></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="platform-icon" src="/img/icons/chrome.svg"></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><img class="platform-icon" src="/img/icons/safari.svg"></div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" th:each="platform : ${testCase.platforms}">
+                                        <img class="platform-icon" th:src="@{${'/img/icons/' + platform + '.svg'}}">
+                                </div>
                                 </div>
                             </div>
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                <div class="website-traffic-ctn">
 
-                                </div>
-                            </div>
                         </div>
                         <!--RESULT HEADER DIV END-->
                         <!--RESULT DETAILED COLLAPSE DIV START-->
                         <div th:id="'testCase'+${testCase.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body" th:text="${testCase.fullName}">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Name</h5></div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p style="word-break:break-word;" th:text="${testCase.testName}"></p></div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Error Message</h5></div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p th:text="${testCase.errorMessage}"></p></div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Jenkins URL</h5></div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><a style="word-break:break-word;cursor:pointer;" th:text="${testCase.testURL}"></a></div>
+                                </div>
                             </div>
+                        </div>
+                        </div>
+
+
+                        <div style="margin-top:6px; position: relative; height:40px" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                            <img data-toggle="dropdown" class="dropdown-toggle jiraicon" th:id="'jiraicon'+${testCase.id}" src="/img/icons/jira.png">
+                            <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
+                            <ul style="top:0; right:0; left:0;" class="dropdown-menu status-dropdown-menu">
+                                <li th:onclick="'return showJiraOverlay();'"><a id="notfixed" href="#">Create ticket</a></li>
+                                <li th:onclick="'return showJiraOverlay();'"><a id="workingon" href="#">Change ticket</a></li>
+                            </ul>
+
                         </div>
                         <!--RESULT DETAILED COLLAPSE DIV END-->
                     </div>

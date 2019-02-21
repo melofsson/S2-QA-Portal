@@ -1,0 +1,5 @@
+<config>
+    <drivers>
+    <driver id="local_chrome" type="ChromeDriver"></driver>
+    </drivers>
+</config>
