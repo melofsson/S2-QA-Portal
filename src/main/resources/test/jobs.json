@@ -1,0 +1,41 @@
+{
+  "_class" : "org.jenkinsci.plugins.categorizedview.CategorizedJobsView",
+  "description" : null,
+  "jobs" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Android_GalaxyS7_GRID_MORNING_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Android_GalaxyS7_GRID_MORNING_STABLE/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Android_GalaxyS7_GRID_NIGHT_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Android_GalaxyS7_GRID_NIGHT_STABLE/",
+      "color" : "yellow"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Android_GalaxyS7_GRID_SMOKE_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Android_GalaxyS7_GRID_SMOKE_STABLE/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Android_GalaxyS7_GRID_WEEKEND_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/",
+      "color" : "blue"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Web_Win_Chrome_MORNING_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Web_Win_Chrome_MORNING_STABLE/",
+      "color" : "yellow"
+    }
+  ],
+  "name" : "OTT Test (Stable)",
+  "property" : [
+
+  ],
+  "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/"
+}

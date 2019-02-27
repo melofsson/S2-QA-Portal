@@ -1,0 +1,148 @@
+{
+  "_class" : "hudson.maven.MavenModuleSetBuild",
+  "actions" : [
+    {
+      "_class" : "hudson.model.CauseAction",
+      "causes" : [
+        {
+          "_class" : "hudson.model.Cause$UpstreamCause",
+          "shortDescription" : "Started by upstream project \"Web_Win_Chrome_SERIAL_MORNING_STABLE\" build number 120",
+          "upstreamBuild" : 120,
+          "upstreamProject" : "Web_Win_Chrome_SERIAL_MORNING_STABLE",
+          "upstreamUrl" : "job/Web_Win_Chrome_SERIAL_MORNING_STABLE/"
+        }
+      ]
+    },
+    {
+
+    },
+    {
+      "_class" : "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName" : {
+        "refs/remotes/origin/dev" : {
+          "_class" : "hudson.plugins.git.util.Build",
+          "buildNumber" : 119,
+          "buildResult" : null,
+          "marked" : {
+            "SHA1" : "b6b906729acd670f7ec5c54095086bf587e2cdf8",
+            "branch" : [
+              {
+                "SHA1" : "b6b906729acd670f7ec5c54095086bf587e2cdf8",
+                "name" : "refs/remotes/origin/dev"
+              }
+            ]
+          },
+          "revision" : {
+            "SHA1" : "b6b906729acd670f7ec5c54095086bf587e2cdf8",
+            "branch" : [
+              {
+                "SHA1" : "b6b906729acd670f7ec5c54095086bf587e2cdf8",
+                "name" : "refs/remotes/origin/dev"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision" : {
+        "SHA1" : "b6b906729acd670f7ec5c54095086bf587e2cdf8",
+        "branch" : [
+          {
+            "SHA1" : "b6b906729acd670f7ec5c54095086bf587e2cdf8",
+            "name" : "refs/remotes/origin/dev"
+          }
+        ]
+      },
+      "remoteUrls" : [
+        "$autotest_bb_git"
+      ],
+      "scmName" : ""
+    },
+    {
+      "_class" : "hudson.plugins.git.GitTagAction"
+    },
+    {
+
+    },
+    {
+      "_class" : "hudson.maven.reporters.SurefireAggregatedReport",
+      "failCount" : 2,
+      "skipCount" : 0,
+      "totalCount" : 11,
+      "urlName" : "testReport"
+    },
+    {
+      "_class" : "hudson.maven.reporters.MavenAggregatedArtifactRecord"
+    },
+    {
+      "_class" : "hudson.plugins.testng.TestNGTestResultBuildAction",
+      "failCount" : 2,
+      "skipCount" : 0,
+      "totalCount" : 11,
+      "urlName" : "testngreports"
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    }
+  ],
+  "artifacts" : [
+    {
+      "displayPath" : "tvCatchup__local_chrome__2019-02-25--06-54-39.jpg",
+      "fileName" : "tvCatchup__local_chrome__2019-02-25--06-54-39.jpg",
+      "relativePath" : "target/surefire-reports/tvCatchup__local_chrome__2019-02-25--06-54-39.jpg"
+    },
+    {
+      "displayPath" : "tvStartOver__local_chrome__2019-02-25--07-05-17.jpg",
+      "fileName" : "tvStartOver__local_chrome__2019-02-25--07-05-17.jpg",
+      "relativePath" : "target/surefire-reports/tvStartOver__local_chrome__2019-02-25--07-05-17.jpg"
+    }
+  ],
+  "building" : false,
+  "description" : null,
+  "displayName" : "#119",
+  "duration" : 753041,
+  "estimatedDuration" : 702313,
+  "executor" : null,
+  "fullDisplayName" : "Web_Win_Chrome_MORNING_STABLE #119",
+  "id" : "119",
+  "keepLog" : false,
+  "number" : 119,
+  "queueId" : 224700,
+  "result" : "UNSTABLE",
+  "timestamp" : 1551074017431,
+  "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/119/",
+  "builtOn" : "autotest-win10pc2",
+  "changeSet" : {
+    "_class" : "hudson.plugins.git.GitChangeSetList",
+    "items" : [
+
+    ],
+    "kind" : "git"
+  },
+  "culprits" : [
+    {
+      "absoluteUrl" : "https://jenkins.tvoip.telia.com/user/hazim.deirmenci",
+      "fullName" : "hazim.deirmenci"
+    },
+    {
+      "absoluteUrl" : "https://jenkins.tvoip.telia.com/user/iiw965",
+      "fullName" : "Filip Wennerdahl"
+    },
+    {
+      "absoluteUrl" : "https://jenkins.tvoip.telia.com/user/mikael.elofsson",
+      "fullName" : "mikael.elofsson"
+    }
+  ],
+  "mavenArtifacts" : {
+
+  },
+  "mavenVersionUsed" : "3.3.3"
+}
