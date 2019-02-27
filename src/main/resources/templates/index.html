@@ -120,9 +120,9 @@
                                 <img data-toggle="dropdown" class="dropdown-toggle statusicon" th:id="'statusicon'+${testCase.id}" src="/img/icons/goal.svg">-->
                                 <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
                                <!-- <ul style="top:0; right:0; left:0;" class="dropdown-menu status-dropdown-menu">
-                                    <li th:onclick="'return setStatusNotFixed(\'test' + ${testCase.id} + '\');'"><a id="notfixed-test" href="#" style="color: red;">Not fixed</a></li>
-                                    <li th:onclick="'return setStatusWorkingOn(\'test' + ${testCase.id} + '\');'"><a id="workingon-test" href="#" style="color: orange;">Working on</a></li>
-                                    <li th:onclick="'return setStatusResolved(\'test' + ${testCase.id} + '\');'"><a id="resolved-test" href="#" style="color: green;">Resolved</a></li>
+                                    <li th:onclick="'return setStatusNotFixed(\'mockedJSON' + ${testCase.id} + '\');'"><a id="notfixed-mockedJSON" href="#" style="color: red;">Not fixed</a></li>
+                                    <li th:onclick="'return setStatusWorkingOn(\'mockedJSON' + ${testCase.id} + '\');'"><a id="workingon-mockedJSON" href="#" style="color: orange;">Working on</a></li>
+                                    <li th:onclick="'return setStatusResolved(\'mockedJSON' + ${testCase.id} + '\');'"><a id="resolved-mockedJSON" href="#" style="color: green;">Resolved</a></li>
                                 </ul>
 
                             </div>-->
@@ -196,7 +196,7 @@
                         <!--<table id="details-table" width="100%" height="100%" style="margin:10px;" border="1px">
                             <tr id="table-column">
                                 <td id="job-name"></td>
-                                <td id="test-status"></td>
+                                <td id="mockedJSON-status"></td>
                             </tr>
                         </table>-->
 
@@ -266,8 +266,8 @@
 
 
         $("#job-name").attr("th:text","${testJob.name}");
-        $("#test-status").attr("th:each","testRun:${testJob.testRuns}");
-        $("#test-status").attr("th:text","${testRun.status}");
+        $("#mockedJSON-status").attr("th:each","testRun:${testJob.testRuns}");
+        $("#mockedJSON-status").attr("th:text","${testRun.status}");
 
 
         return false;*/

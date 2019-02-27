@@ -30,14 +30,13 @@ public class MockedJenkinsDataCollector {
         JsonArray jobsArray = null;
 
         try {
-            Response response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/test/jobs.json");
+            Response response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/mockedJSON/jobs.json");
             if (response != null) {
                 jobsArray = response.asJsonArray("jobs");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         for (JsonElement responseElement : jobsArray) {
             JsonObject responseObject = responseElement.getAsJsonObject();
@@ -64,7 +63,7 @@ public class MockedJenkinsDataCollector {
         JsonArray buildsArray = null;
 
         try {
-            Response response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/test/win_chrome.json");
+            Response response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/mockedJSON/win_chrome.json");
             if (response != null) {
                 buildsArray = response.asJsonArray("builds");
             }
@@ -84,7 +83,7 @@ public class MockedJenkinsDataCollector {
 
         JsonArray artifactsArray = null;
         try {
-            Response response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/test/win_chrome_builddetails.json");
+            Response response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/mockedJSON/win_chrome_builddetails.json");
             if (response != null) {
                 artifactsArray = response.asJsonArray("artifacts");
             }
@@ -104,7 +103,7 @@ public class MockedJenkinsDataCollector {
 
         Response response = null;
         try {
-            response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/test/win_chrome_tests.json");
+            response = MockedWebRequest.GET("/Users/framework-dev/Git/S2-QA-Portal/src/main/resources/mockedJSON/win_chrome_tests.json");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -114,7 +113,6 @@ public class MockedJenkinsDataCollector {
             //  testBuild.setNrOfTests(responseObject.get("totalCount").getAsInt());
             testBuild.setNrOfFailedTests(responseObject.get("failCount").getAsInt());
             testBuild.setNrOfSkippedTests(responseObject.get("skipCount").getAsInt());
-
 
             JsonArray suitesArray = responseObject.getAsJsonArray("suites");
             JsonArray testsArray = new JsonArray();

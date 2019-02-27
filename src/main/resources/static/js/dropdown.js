@@ -59,7 +59,7 @@ function showCorrectDiv(choice){
             $("#error-messages-div").css('display','block');
             $("#failing-tests-div").css('display','none');
             break;
-        case "Failing test":
+        case "Failing mockedJSON":
             $("#error-messages-div").css('display','none');
             $("#failing-tests-div").css('display','block');
             break;
