@@ -1,0 +1,197 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+
+    },
+    null,
+    {
+
+    },
+    {
+      "_class" : "hudson.plugins.jobConfigHistory.JobConfigHistoryProjectAction"
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+      "_class" : "org.jenkinsci.plugins.testresultsanalyzer.TestResultsAnalyzerAction"
+    },
+    {
+
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description" : "naming convention: \r\n<group>_<browser>_<os>_<local/grid>_<number of threads>_threads\r\n<group>_<mobile_platform>_<os>_<local/grid>_<number of threads>_threads",
+  "displayName" : "Android_GalaxyS7_GRID_WEEKEND_STABLE",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "Android_GalaxyS7_GRID_WEEKEND_STABLE",
+  "fullName" : "Android_GalaxyS7_GRID_WEEKEND_STABLE",
+  "name" : "Android_GalaxyS7_GRID_WEEKEND_STABLE",
+  "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 45,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/45/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 44,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/44/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 43,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/43/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 42,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/42/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 41,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/41/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 40,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/40/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 39,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/39/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 38,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/38/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 37,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/37/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 36,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/36/"
+    }
+  ],
+  "color" : "blue",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 36,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/36/"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 87 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Test Result: 0 tests failing out of a total of 87 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 45,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/45/"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 45,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/45/"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 45,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/45/"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 45,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/45/"
+  },
+  "lastUnstableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 44,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/44/"
+  },
+  "lastUnsuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 44,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/44/"
+  },
+  "nextBuildNumber" : 46,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.plugins.throttleconcurrents.ThrottleJobProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Android_GalaxyS8_WEEKEND_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Android_GalaxyS8_WEEKEND_STABLE/",
+      "color" : "yellow"
+    }
+  ],
+  "labelExpression" : "autotest-ubuntu1",
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM"
+  },
+  "upstreamProjects" : [
+    {
+      "_class" : "hudson.model.FreeStyleProject",
+      "name" : "Android_Parent_Trigger_WEEKEND_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Android_Parent_Trigger_WEEKEND_STABLE/",
+      "color" : "blue"
+    }
+  ],
+  "modules" : [
+    {
+      "name" : "se.kentor.automatedtesting:telia-playplus",
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Android_GalaxyS7_GRID_WEEKEND_STABLE/se.kentor.automatedtesting$telia-playplus/",
+      "color" : "blue",
+      "displayName" : "Telia TVE Auto Testing"
+    }
+  ]
+}

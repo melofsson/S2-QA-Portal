@@ -1,0 +1,252 @@
+{
+  "_class" : "hudson.maven.MavenModuleSet",
+  "actions" : [
+    {
+
+    },
+    null,
+    {
+
+    },
+    {
+      "_class" : "hudson.plugins.jobConfigHistory.JobConfigHistoryProjectAction"
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+      "_class" : "org.jenkinsci.plugins.testresultsanalyzer.TestResultsAnalyzerAction"
+    },
+    {
+
+    },
+    {
+      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description" : "",
+  "displayName" : "Web_Win_Chrome_MORNING_STABLE",
+  "displayNameOrNull" : null,
+  "fullDisplayName" : "Web_Win_Chrome_MORNING_STABLE",
+  "fullName" : "Web_Win_Chrome_MORNING_STABLE",
+  "name" : "Web_Win_Chrome_MORNING_STABLE",
+  "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/",
+  "buildable" : true,
+  "builds" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 119,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/119/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 118,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/118/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 117,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/117/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 116,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/116/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 115,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/115/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 114,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/114/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 113,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/113/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 112,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/112/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 111,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/111/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 110,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/110/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 109,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/109/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 108,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/108/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 107,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/107/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 106,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/106/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 105,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/105/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 104,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/104/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 103,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/103/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 102,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/102/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 101,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/101/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 100,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/100/"
+    },
+    {
+      "_class" : "hudson.maven.MavenModuleSetBuild",
+      "number" : 72,
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/72/"
+    }
+  ],
+  "color" : "yellow",
+  "firstBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 72,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/72/"
+  },
+  "healthReport" : [
+    {
+      "description" : "Test Result: 2 tests failing out of a total of 11 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 81
+    },
+    {
+      "description" : "Test Result: 2 tests failing out of a total of 11 tests.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 81
+    },
+    {
+      "description" : "Build stability: No recent builds failed.",
+      "iconClassName" : "icon-health-80plus",
+      "iconUrl" : "health-80plus.png",
+      "score" : 100
+    }
+  ],
+  "inQueue" : false,
+  "keepDependencies" : false,
+  "lastBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 119,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/119/"
+  },
+  "lastCompletedBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 119,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/119/"
+  },
+  "lastFailedBuild" : null,
+  "lastStableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 72,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/72/"
+  },
+  "lastSuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 119,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/119/"
+  },
+  "lastUnstableBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 119,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/119/"
+  },
+  "lastUnsuccessfulBuild" : {
+    "_class" : "hudson.maven.MavenModuleSetBuild",
+    "number" : 119,
+    "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/119/"
+  },
+  "nextBuildNumber" : 120,
+  "property" : [
+    {
+      "_class" : "jenkins.model.BuildDiscarderProperty"
+    },
+    {
+      "_class" : "hudson.plugins.throttleconcurrents.ThrottleJobProperty"
+    }
+  ],
+  "queueItem" : null,
+  "concurrentBuild" : false,
+  "downstreamProjects" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Web_Win_Chrome_MOCKED_MORNING_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Web_Win_Chrome_MOCKED_MORNING_STABLE/",
+      "color" : "blue"
+    }
+  ],
+  "labelExpression" : "win10pcslave2",
+  "scm" : {
+    "_class" : "hudson.plugins.git.GitSCM"
+  },
+  "upstreamProjects" : [
+    {
+      "_class" : "hudson.maven.MavenModuleSet",
+      "name" : "Web_Win_Chrome_SERIAL_MORNING_STABLE",
+      "url" : "https://jenkins.tvoip.telia.com/job/Web_Win_Chrome_SERIAL_MORNING_STABLE/",
+      "color" : "blue"
+    }
+  ],
+  "modules" : [
+    {
+      "name" : "se.kentor.automatedtesting:telia-playplus",
+      "url" : "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/job/Web_Win_Chrome_MORNING_STABLE/se.kentor.automatedtesting$telia-playplus/",
+      "color" : "yellow",
+      "displayName" : "Telia TVE Auto Testing"
+    }
+  ]
+}

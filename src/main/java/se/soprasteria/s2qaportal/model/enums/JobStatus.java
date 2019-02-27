@@ -1,7 +1,7 @@
 package se.soprasteria.s2qaportal.model.enums;
 
-public enum ResultStatus {
+public enum JobStatus {
     SUCCESS,
     FAIL,
-    SKIPPED
+    UNSTABLE
 }
