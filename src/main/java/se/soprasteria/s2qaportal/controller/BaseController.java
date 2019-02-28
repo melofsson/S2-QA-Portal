@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import se.soprasteria.s2qaportal.model.TestRun;
-import se.soprasteria.s2qaportal.repository.TestRepository;
+import se.soprasteria.s2qaportal.repository.ITestRepository;
 import se.soprasteria.s2qaportal.services.JenkinsDataCollector;
 import se.soprasteria.s2qaportal.services.mocked.MockedJenkinsDataCollector;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class BaseController implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired
-    private TestRepository testRepository;
+    private ITestRepository testRepository;
     //Set to true if to use mockedData, false if to use data from Telia Jenkins (REQUIRES CONNECTION TO THEIR VPN)
     boolean useMockedData = true;
 

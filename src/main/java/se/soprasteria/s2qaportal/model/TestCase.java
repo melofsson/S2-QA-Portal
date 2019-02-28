@@ -18,8 +18,8 @@ public class TestCase implements Serializable {
     @Column(name = "testID")*/
     private Long testID;
     private int id = ID_GENERATOR.getAndIncrement();
-    String imageURL;
-    String videoURL;
+    private String imageURL;
+    private String videoURL;
     private String errorDetails;
     private String errorStackTrace;
     private String skippedMessage;
@@ -27,8 +27,8 @@ public class TestCase implements Serializable {
     private String className;
     private boolean isSkipped;
     private int duration;
-    String status;
-    List<TestJob> testJobs;
+    private String status;
+    private List<TestJob> testJobs;
 
     public TestCase(String className, String name, int duration, String status){
         this.className = className;
