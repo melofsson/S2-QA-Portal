@@ -1,15 +1,13 @@
-package se.soprasteria.s2qaportal.services;
+/*package se.soprasteria.s2qaportal.services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import se.soprasteria.s2qaportal.model.TestBuild;
 import se.soprasteria.s2qaportal.model.TestCase;
 import se.soprasteria.s2qaportal.model.TestJob;
 import se.soprasteria.s2qaportal.model.TestRun;
 
-import java.io.IOException;
 import java.util.*;
 
 public class JenkinsDataCollector {
@@ -67,7 +65,7 @@ public class JenkinsDataCollector {
         }
     }
 
-    public HashMap saveArtifactsInArray(TestBuild testBuild, String buildURL){
+    public HashMap getArtifactRelativePaths(TestBuild testBuild, String buildURL){
 
         JsonArray artifactsArray = WebRequest.GET(buildURL).asJsonArray("artifacts");
         HashMap artifactRelativePaths = new HashMap();
@@ -78,7 +76,7 @@ public class JenkinsDataCollector {
     }
 
     public void attachTestData(TestBuild testBuild, String URL){
-        HashMap artifacts = saveArtifactsInArray(testBuild, URL + apiSuffix);
+        HashMap artifacts = getArtifactRelativePaths(testBuild, URL + apiSuffix);
 
         Response response = WebRequest.GET(URL + testReportSubstring + apiSuffix);
 
@@ -176,3 +174,4 @@ public class JenkinsDataCollector {
     }
 
 }
+*/

@@ -74,6 +74,11 @@
 </head>
 
 <body>
+<!--<div style="width:200px">
+    <video id="0" controls width="200px" height="360">
+        <source src="http://ec2-34-250-251-240.eu-west-1.compute.amazonaws.com:8080/job/SAFARI_MacOS/lastSuccessfulBuild/artifact/webdriver-core-test/target/surefire-reports/video/didElementChangeDuringInterval_definedSimilarity_02-13-19_13-23-10.avi"/>
+    </video>
+</div>-->
 <div class="jiraOverlay" style="display: block;">
     <div id="jiradiv" style="padding:50px">
         <button th:onclick="'return closeJiraOverlay();'" type="button" class="close" aria-label="Close">
@@ -86,12 +91,13 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <!-- Start Header Top Area -->
-    <div class="header-top-area">
+    <div style="padding-top:5px; padding-bottom:5px;" class="header-top-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <img class="logo" src="/img/icons/kungfu_logo.png">
+                        <!--<img class="logo" src="/img/icons/kungfu_logo.png">-->
+                        <p style="margin:0px; color:white;">TEST RESULT PORTAL</p>
                     </div>
                 </div>
             </div>
@@ -99,23 +105,30 @@
     </div>
     <!-- End Header Top Area -->
     <!-- Start Status area -->
-    <div class="notika-status-area mg-tb-40">
-        <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div style="margin:0px;" class="notika-status-area mg-tb-40">
+        <div style="padding-left:0px;" class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <!--LEFT SECTION START-->
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px">
-                        <h3 data-toggle="dropdown" class="dropdown-toggle" id="main-section-title" style="cursor:pointer; float:left; padding-left:15px; margin:0;">FAILING TESTS</h3><span style="cursor:pointer" class="caret"></span>
+                <div style="background-color:#ffffff; box-shadow:1px 2px 10px 0px #c1c1c1; padding-right:4px; padding-left:4px;" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+
+
+
+                    <div class="title-height col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px; margin-top:20px;">
+                        <h3 data-toggle="dropdown" class="dropdown-toggle" id="main-section-title" style="cursor:pointer; float:left; padding-left:15px; margin:0;">All tests</h3><span style="cursor:pointer" class="caret"></span>
                         <ul style="top:0; left:0;" class="dropdown-menu arrange-dropdown-menu">
-                            <li><a href="#">Error message</a></li>
-                            <li><a href="#">Failing test</a></li>
+                            <li><a href="#">Failing</a></li>
+                            <li><a href="#">Skipped</a></li>
+                            <li><a href="#">Successful</a></li>
                         </ul>
                     </div>
 
                     <!--FAILINGS TESTS DIV START-->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0;" id="failing-tests-div">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0; overflow-y: scroll; height:100vh" id="failing-tests-div">
                         <!-- TEST RESULT START -->
-                        <div th:onmouseover="|showIcons(${testCase.id})|" th:onmouseout="|hideIcons(${testCase.id})|" th:onclick="|openDetailsView(${iterStat.index})|" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase,iterStat : ${testCases}">
+                        <!--<div th:onmouseover="|showIcons(${testCase.id})|" th:onmouseout="|hideIcons(${testCase.id})|" th:onclick="|openDetailsView(${iterStat.index})|" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase,iterStat : ${testCases}">-->
 
+                        <div class="no-horizontal-padding col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="testCase,iterStat : ${testCases}">
+                            <a th:href="@{/getChosenTestCase/{id}(id = ${testCase.id})}">
                             <!--<div style="margin-top:6px; position: relative; height:40px" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                 <img data-toggle="dropdown" class="dropdown-toggle statusicon" th:id="'statusicon'+${testCase.id}" src="/img/icons/goal.svg">-->
                                 <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
@@ -128,39 +141,33 @@
                             </div>-->
 
                             <!---MAIN DIV-->
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-horizontal-padding">
 
                                 <!--RESULT HEADER DIV ONE-->
-                                <div th:id="'test'+${testCase.id}" class="notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 testnames-inner color-fail" style="display:flex; align-items: center; justify-content: center;" data-toggle="collapse" data-parent="#accordion" th:href="'#testCase' + ${testCase.id}" aria-expanded="false" aria-controls="collapseTwo">
+                                <!--<div th:id="'test'+${testCase.id}" class="notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 testnames-inner no-shadow" style="display:flex; align-items: center; justify-content: center;" data-toggle="collapse" data-parent="#accordion" th:href="'#testCase' + ${testCase.id}" aria-expanded="false" aria-controls="collapseTwo">-->
+                                <div th:id="'test'+${testCase.name}" class="notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 testnames-inner color-fail" style="display:flex; align-items: center; justify-content: center;">
+                                    <div style="width:100%;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <h5 style="text-overflow: ellipsis; overflow:hidden; margin-top:10px; margin-bottom:10px;" th:text="${testCase.name}">TEST NAME</h5>
+                                    </div>
 
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                        <h5 style=" margin-top:10px; margin-bottom:10px;" th:text="${testCase.name}">TEST NAME</h5>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <div class="website-traffic-ctn">
-                                           <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" th:each="platform : ${testCase.platforms}">
-                                                <img class="platform-icon" th:src="@{${'/img/icons/' + platform + '.svg'}}">
-                                            </div>-->
-                                        </div>
-                                    </div>
 
                                 </div>
                                 <!--RESULT HEADER DIV END-->
                                 <!--RESULT DETAILED COLLAPSE DIV START-->
-                                <div th:id="'testCase'+${testCase.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingTwo">
+                                <!--<div th:id="'testCase'+${testCase.id}" class="panel-collapse collapse testresult-collapsable" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="panel-body">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Name</h5></div>
                                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p style="word-break:break-word;" th:text="${testCase.name}"></p></div>
 
-                                           <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Error Message</h5></div>
+                                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Error Message</h5></div>
                                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><p th:text="${testCase.errorMessage}"></p></div>
 
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><h5>Jenkins URL</h5></div>
-                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><a style="word-break:break-word;cursor:pointer;" th:text="${testCase.testURL}"></a></div>-->
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><a style="word-break:break-word;cursor:pointer;" th:text="${testCase.testURL}"></a></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
 
 
@@ -174,7 +181,9 @@
 
                             </div>-->
                             <!--RESULT DETAILED COLLAPSE DIV END-->
+                            </a>
                         </div>
+
                         <!-- TEST RESULT END -->
                     </div>
                     <!-- FAILING TEST DIV -->
@@ -184,22 +193,146 @@
                 </div>
             <!--LEFT SECTION END-->
             <!--MIDDLE SECTION START-->
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="padding-left:30px; padding-right:0px;">
+                <div class="title-height col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px"></div>
 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px">
-                <h3 class="dropdown-toggle main-section-title" style="cursor:pointer; float:left; padding-left:15px; margin:0;">DETAILS</h3>
-                <!--<span data-toggle="dropdown" class="dropdown-toggle dot_notfixed" th:id="'statusicon'+${errorCase.id}"></span>-->
-            </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px">
-                    <div id="details-container" class="details-inner">
 
-                        <!--<table id="details-table" width="100%" height="100%" style="margin:10px;" border="1px">
-                            <tr id="table-column">
-                                <td id="job-name"></td>
-                                <td id="mockedJSON-status"></td>
-                            </tr>
-                        </table>-->
+                <div class="no-horizontal-padding col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px">
+                    <div class=" details-inner col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
+                        <div id="overview-details" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 middle-section-title">
+                            <h3 class="dropdown-toggle middle-section-title" style="cursor:pointer; padding-left:15px; padding-top:15px; float:left;margin:0;">OVERVIEW</h3>
+
+
+                                <h3 data-toggle="dropdown" class="dropdown-toggle" style="cursor:pointer; float:right; padding-right:15px; padding-top:15px; margin:0;">SMOKE  <span style="cursor:pointer" class="caret"></span></h3>
+
+                                <ul style="top:0; left:80%;right:0;" class="dropdown-menu arrange-dropdown-menu">
+                                    <li><a href="#">- ALL - </a></li>
+                                    <li><a href="#">SMOKE</a></li>
+                                    <li><a href="#">NIGHT</a></li>
+                                    <li><a href="#">WEEKEND</a></li>
+                                    <li><a href="#">MORNING</a></li>
+                                </ul>
+
+
+                        </div>
+
+                        <div id="details-container" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="table-responsive">
+                                <table class="table" border="0" cellpadding="0" cellspacing="0">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+
+                                        <th scope="col" th:each="date:${dates}"><span th:text="${date}">hwj</span>
+                                        </th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <!--/*@thymesVar id="testCaseData" type="se.soprasteria.s2qaportal.model.TestCaseData"*/-->
+                                    <span th:each="caseData:${testCaseData}">
+                                    <tr class="overview-row" >
+                                        <th scope="row" class="no-horizontal-padding">
+                                            <div id="jobname-div" class="no-horizontal-padding col-lg-12 col-md-12 col-sm-12 col-xs-12" data-toggle="collapse" data-parent="#accordion" th:href="'#testJob' + ${caseData.testJob.id}" aria-expanded="false" aria-controls="collapseTwo">
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" th:switch="${caseData.testJob.platform}" style="padding:0px; height:30px">
+                                                    <img th:case="'Chrome'" class="platform-image" src="/img/icons/Mac_Chrome.svg">
+                                                    <img th:case="'iOS'" class="platform-image" src="/img/icons/iOS.svg">
+                                                    <img th:case="'Android'" class="platform-image" src="/img/icons/Android.svg">
+                                                    <img th:case="'Firefox'" class="platform-image" src="/img/icons/Mac_Firefox.svg">
+                                                    <img th:case="'Safari'" class="platform-image" src="/img/icons/Mac_Safari.svg">
+                                                    <img th:case="'Internet explorer'" class="platform-image"  src="/img/icons/Win_InternetExplorer.svg">
+                                                    <img th:case="'Edge'" class="platform-image" src="/img/icons/Win_Edge.svg">
+                                                </div>
+                                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                                    <span th:if="${caseData.testJob.device} != 'null'"><span th:text="${caseData.testJob.device}"></span></span>
+                                                    <span th:unless="${caseData.testJob.device} != 'null'"><span th:text="${caseData.testJob.OS}"></span></span>
+                                                    <span id="arrow-down"><img style="width:20px; float:right;" class="arrow-image" src="/img/icons/angle-arrow-down.svg"></span>
+                                                </div>
+                                            </div>
+                                        </th>
+
+
+
+
+
+                                        <td style="height:30px; width:30px;" th:each="testRunScheduleObject, iterStat:${caseData.testRunScheduleDataList}">
+                                            <!--<div th:each="hashMap:${testRunScheduleObject.testRunStatusList}" th:switch="${testRunScheduleObject.hasData}">-->
+                                            <!--<div style="background-color:red; height:50px; width:50px;" th:switch="${testRunScheduleObject.testRunStatusList[0].get('testrun_status')}">-->
+
+
+                                            <div th:switch="${testRunScheduleObject.hasData}" style="height:30px; width:30px;">
+                                            <span th:case="true">
+                                                <div style="width:100%; height:100%;" th:switch="${testRunScheduleObject.testRunStatusList[0].get('testrun_status')}">
+                                                    <a th:href="@{/getChosenTestRun/{id}(id = ${testRunScheduleObject.testRunStatusList[0].get('testrun_id')})}">
+                                                    <img th:case="'passed'" class="test-status-icon" src="/img/icons/passed.svg">
+                                                    <img th:case="'skipped'" class="test-status-icon" src="/img/icons/share.svg">
+                                                    <img th:case="'failed'" class="test-status-icon" src="/img/icons/fail.svg">
+                                                    <img th:case="'regression'" class="test-status-icon" src="/img/icons/delete.svg">
+                                                    </a>
+                                                </div>
+                                               <!-- <div th:switch="${hashMap.get('testrun_status')}" style="background-color:red;">
+
+                                                    <img th:case="'passed'" class="test-status-icon" src="/img/icons/passed.svg">
+                                                    <img th:case="'skipped'" class="test-status-icon" src="/img/icons/next.svg">
+                                                    <img th:case="'failed'" class="test-status-icon" src="/img/icons/fail.svg">
+                                                    <img th:case="'regression'" class="test-status-icon" src="/img/icons/delete.svg">
+                                                </div>-->
+                                            </span>
+                                            <span th:case="false"></span>
+                                            </div>
+
+
+
+
+                                        </td>
+                                            <!--<span th:case="false" th:text="no run"></span></td>-->
+                                    </tr>
+                                        <tr>
+                                            <td colspan="8" style="padding:0px;">
+
+                                                <div th:id="'testJob'+${caseData.testJob.id}" class="panel-body panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" style="padding:0px; margin:0px; width:100%">
+                                                    <table style="width:100%; padding:0px; margin:0px;">
+                                                        <tbody style="vertical-align: top;">
+                                                            <tr>
+                                                                <th scope="row" class="no-horizontal-padding">
+                                                                    <div class="no-horizontal-padding col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0px; height:30px"></div>
+                                                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                                                    </div>
+                                                                </th>
+                                                                <td style="height:46px; width:46px; padding:8px;" th:each="testRunScheduleObject:${caseData.testRunScheduleDataList}">
+                                                                    <div th:each="hashMap,iterStat:${testRunScheduleObject.testRunStatusList}" th:switch="${testRunScheduleObject.hasData}">
+                                                                    <!--<div style="background-color:red; height:50px; width:50px;" th:switch="${testRunScheduleObject.testRunStatusList[0].get('testrun_status')}">-->
+                                                                    <!--<div th:switch="${testRunScheduleObject.hasData}" style="height:30px; width:30px;">-->
+                                                                        <span th:case="true">
+                                                                            <div th:if="${iterStat.index != 0}" style="width:30px; height:30px; margin-bottom:8px;" th:switch="${hashMap.get('testrun_status')}">
+                                                                                <a th:href="@{/getChosenTestRUn/{id}(id = ${testRunScheduleObject.testRunStatusList[0].get('testrun_id')})}">
+                                                                                <img th:case="'passed'" class="test-status-icon" src="/img/icons/passed.svg">
+                                                                                <img th:case="'skipped'" class="test-status-icon" src="/img/icons/share.svg">
+                                                                                <img th:case="'failed'" class="test-status-icon" src="/img/icons/fail.svg">
+                                                                                <img th:case="'regression'" class="test-status-icon" src="/img/icons/delete.svg">
+                                                                                </a>
+                                                                            </div>
+                                                                        </span>
+                                                                        <span th:case="false"></span>
+                                                                    </div>
+                                                                </td>
+                                                <!--<span th:case="false" th:text="no run"></span></td>-->
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    </span>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -213,7 +346,90 @@
 
 
             <!--RIGHT SECTION START-->
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <div class="title-height col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px"></div>
+                <div class="no-horizontal-padding col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:20px">
+                    <div class="test-run-details col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 middle-section-title">
+                            <h3 class="dropdown-toggle" style="cursor:pointer; float:left; padding-left:15px; padding-top:15px; margin:0;">TEST RUN</h3>
+                        </div>
+
+                        <div style="word-wrap:break-word; overflow-y:scroll;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="no-horizontal-padding col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="no-horizontal-padding col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <p>DURATION: <span th:text="${testRun.duration}"></span></p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+                            <p>STATUS: <span th:switch="${testRun.statusID}">
+                                <span th:case="1">SKIPPED</span>
+                                <span th:case="2">PASSED</span>
+                                <span th:case="3">FAILED</span>
+                                <span th:case="4">REGRESSION</span>
+                                <span th:case="5">FIXED</span>
+                            </span></p>
+                            </div>
+
+                            <div th:switch="${testRun.statusID}">
+                                <div th:case="1"></div>
+                                <div th:case="2"></div>
+                                <div th:case="3">
+                                    <h4>Error message</h4>
+                                    <p th:text="${testRun.errorDetails}"></p>
+
+                                    <h4>Stacktrace</h4>
+                                    <p th:text="${testRun.errorStacktrace}"></p>
+                                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                                        <video autoplay loop class="embed-responsive-item embed-responsive-16by9 controls" controls style="width:100%; height:auto;">
+                                            <source src="https://app.testobject.com:443/api/rest/users/s2pigeon/projects/api-test/video/2498a4a5-0871-4153-869c-78ba8578e4ee.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                                        <img src="/img/screenshots/screenshot_example.jpg">
+                                    </div>
+                                    </div>
+
+
+                                </div>
+                                <div th:case="4">
+                                    <h4>Error message</h4>
+                                    <p></p>
+
+                                    <h4>Stacktrace</h4>
+                                    <p></p>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                                        <video autoplay loop class="embed-responsive-item embed-responsive-16by9 controls" controls style="width:100%; height:auto;">
+                                            <source src="https://app.testobject.com:443/api/rest/users/s2pigeon/projects/api-test/video/2498a4a5-0871-4153-869c-78ba8578e4ee.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                                        <img src="/img/screenshots/screenshot_example.jpg">
+                                    </div>
+                                </div>
+                                <div th:case="5"></div>
+
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+                        <!--<table id="details-table" width="100%" height="100%" style="margin:10px;" border="1px">
+                            <tr id="table-column">
+                                <td id="job-name"></td>
+                                <td id="mockedJSON-status"></td>
+                            </tr>
+                        </table>-->
+                    </div>
+                </div>
                 </div>
             <!--RIGHT SECTION END-->
         </div>
@@ -238,7 +454,7 @@
     var htmlCodeToAdd = [];
 
     function openDetailsView(testCaseIndex){
-        htmlCodeToAdd = [];
+       /* htmlCodeToAdd = [];
         htmlCodeToAdd.push("<table border='1' class='details-table'>");
         $("#details-container").css('display','block');
         var testCaseToView = testCases[testCaseIndex];
@@ -260,7 +476,7 @@
         }
 
         htmlCodeToAdd.push("</table>");
-        $("#details-container").html(htmlCodeToAdd.join(""));
+        $("#details-container").html(htmlCodeToAdd.join(""));*/
 
         /*
 

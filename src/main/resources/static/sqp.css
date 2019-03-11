@@ -8,6 +8,11 @@
 
 }
 
+body {
+    /*background-color:#f7f7f7;*/
+    background-color: #efefef;
+}
+
 .jiraOverlay {
     background: rgba(0,0,0,0.5);
     bottom: 0;
@@ -20,6 +25,10 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.2s linear;
+}
+
+.title-height {
+    height:30px;
 }
 
 #jiradiv {
@@ -49,16 +58,24 @@
 }
 
 .testnames-inner {
-    margin-top:6px;
-    box-shadow: 1px 2px 1px 0px #c1c1c1;
-    background:#ffffff;
+    margin-top:3px;
+
+    background: #f3f3f3;
     display:flex;
     cursor: pointer;
-    border-radius: 8px;
+   /* border-radius: 8px;*/
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     padding-top:2px;
     padding-bottom:2px;
+    margin-right:0px;
 
-    height:40px;
+    height:35px;
+}
+
+.no-shadow{
+    box-shadow: 0px 0px 0px 0px #c1c1c1;
+    border-radius:20px;
 }
 
 .statusicon {
@@ -126,13 +143,12 @@
 .dot_notfixed {
      background-color: red;
      border-radius: 50%;
-    display:none;
-    height:30px;
-    width:30px;
+    height:20px;
+    width:20px;
     position:absolute;
     top:50%;
-    right:0px;
-    margin-top:-15px;
+    left:10px;
+    margin-top:-10px;
     float:right;
     cursor:pointer;
  }
@@ -159,6 +175,10 @@
     max-width:70%;
 }
 
+.platform-image {
+    max-width:30px;
+}
+
 .error-case-browser-icon {
     margin-bottom:10px;
 }
@@ -168,7 +188,20 @@
 }
 
 .testnames-inner:hover {
-    background-color:#f1f1f1;
+    background-color: #e5e5e5;
+}
+
+.overview-row:hover {
+    background-color: #f5f7f4;
+}
+
+#jobname-div>div>#arrow-down>img {
+    opacity: 0.2;
+    display: none;
+}
+
+#jobname-div:hover>div>#arrow-down>img {
+    display: block;
 }
 
 .draggable {
@@ -178,6 +211,11 @@
 }
 
 .header-top-area {
-    background-color: #0D0237;
+    /*background-color: #0D0237;*/
+    /*background-color: #424242;*/
+    background-color:#633082;
     box-shadow: 1px 2px 10px 0px #c1c1c1;
 }
+
+tabel {border:0;}
+

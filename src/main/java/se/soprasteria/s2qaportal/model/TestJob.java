@@ -1,12 +1,5 @@
 package se.soprasteria.s2qaportal.model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import se.soprasteria.s2qaportal.model.enums.JobStatus;
-import se.soprasteria.s2qaportal.model.enums.TestGroup;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,25 +7,77 @@ import java.util.List;
 
 public class TestJob implements Serializable {
 
-    /*@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "jobID")*/
-    //private Long jobID;
+    private long id;
     private String name;
-    private String url;
-    List<TestBuild> testBuilds;
-    List<TestRun> testRuns;
+    private String jenkins_url;
+    private String OS;
+    private String device;
+    private String platform;
 
-    public TestJob(String name, String url){
+    List<TestBuild> testBuilds = new ArrayList<>();
+    List<TestRun> testRuns = new ArrayList<>();
+
+
+    public TestJob(int ID, String name, String OS){
+        this.id = ID;
         this.name = name;
-        this.url = url;
-        testBuilds = new ArrayList<>();
+        this.OS = jenkins_url;
+    }
+
+    public TestJob(String name, String jenkins_url, String OS, String device, String platform){
+        this.name = name;
+        this.jenkins_url = jenkins_url;
+        this.OS = OS;
+        this.device = device;
+        this.platform = platform;
+    }
+
+    public TestJob(String name, String os, String device, String platform){
+        this.platform = platform;
+        this.name = name;
+        this.OS = os;
+        this.device = device;
         testRuns = new ArrayList<>();
     }
 
-    public TestJob(String name){
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
         this.name = name;
-        testRuns = new ArrayList<>();
+    }
+
+    public void setJenkins_url(String jenkins_url) {
+        this.jenkins_url = jenkins_url;
+    }
+
+    public String getOS() {
+        return OS;
+    }
+
+    public void setOS(String OS) {
+        this.OS = OS;
+    }
+
+    public String getDevice() {
+        return device;
+    }
+
+    public void setDevice(String device) {
+        this.device = device;
+    }
+
+    public String getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
     }
 
     public List<TestRun> getTestRuns() {
@@ -59,16 +104,28 @@ public class TestJob implements Serializable {
         this.testBuilds.add(testBuild);
     }
 
-    public String getUrl() {
-        return url;
+    public String getJenkins_url() {
+        return jenkins_url;
     }
 
-    public boolean addTestRun(TestRun testRun) {
-        if (testRuns.contains(testRun)){
-            return false;
+    public void addTestRun(TestRun newTestRun) {
+        boolean foundMatch = false;
+        if (testRuns.size()==0) {
+            testRuns.add(newTestRun);
+        } else {
+            for (TestRun testRun : testRuns) {
+                if (testRun.getTestName().equalsIgnoreCase(newTestRun.getTestName())){
+                    foundMatch = true;
+                }
+            }
+            if (!foundMatch)testRuns.add(newTestRun);
         }
-        testRuns.add(testRun);
-        return true;
+
+    }
+
+    public String getSQLValueString(){
+        return "('"+getName()+"', '"+getJenkins_url()+"', '" + getOS() + "', '" +
+                getDevice() + "', '" + getPlatform() + "')";
     }
 
 }

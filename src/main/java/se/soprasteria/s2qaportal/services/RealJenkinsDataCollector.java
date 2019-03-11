@@ -1,4 +1,4 @@
-package se.soprasteria.s2qaportal.services.mocked;
+package se.soprasteria.s2qaportal.services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -8,14 +8,13 @@ import se.soprasteria.s2qaportal.model.TestCase;
 import se.soprasteria.s2qaportal.model.TestJob;
 import se.soprasteria.s2qaportal.model.TestRun;
 import se.soprasteria.s2qaportal.repository.TestCaseRepository;
-import se.soprasteria.s2qaportal.services.Response;
+import se.soprasteria.s2qaportal.services.mocked.MockedWebRequest;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.*;
 
-public class MockedJenkinsDataCollector {
+public class RealJenkinsDataCollector {
 
     private static String urlForJobsUnstable = "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Unstable)/api/json";
     private static String urlForJobsStable = "https://jenkins.tvoip.telia.com/view/OTT%20Test%20(Stable)/api/json";
@@ -28,8 +27,6 @@ public class MockedJenkinsDataCollector {
     private List<TestRun> testRuns;
     private TestCaseRepository testCaseRepository = new TestCaseRepository();
 
-    public MockedJenkinsDataCollector() {
-    }
 
 
     public List<TestJob> getTestData() {
@@ -43,14 +40,12 @@ public class MockedJenkinsDataCollector {
         testRuns = new ArrayList<>();
         JsonArray jobsArray = null;
 
-        try {
-            Response response = MockedWebRequest.GET("src/main/resources/mockedJSON/jobs.json");
+
+            Response response = WebRequest.GET(urlForJobsStable);
             if (response != null) {
                 jobsArray = response.asJsonArray("jobs");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
         for (JsonElement responseElement : jobsArray) {
             JsonObject responseObject = responseElement.getAsJsonObject();
@@ -101,6 +96,8 @@ public class MockedJenkinsDataCollector {
             return "Windows";
         } else if (os.contains("ios")){
             return "iOS";
+        } else if (os.contains("mac")){
+            return "MacOS";
         }
         return null;
     }
@@ -143,14 +140,11 @@ public class MockedJenkinsDataCollector {
         //JsonArray buildsArray = WebRequest.GET(URL).asJsonArray("builds");
         JsonArray buildsArray = null;
 
-        try {
-            Response response = MockedWebRequest.GET("src/main/resources/mockedJSON/win_chrome.json");
+            Response response = WebRequest.GET(URL);
             if (response != null) {
                 buildsArray = response.asJsonArray("builds");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         for (JsonElement responseElement : buildsArray) {
             JsonObject responseObject = responseElement.getAsJsonObject();
             String buildURL = responseObject.get("url").getAsString();
@@ -176,25 +170,17 @@ public class MockedJenkinsDataCollector {
 
         Long timestamp = null;
         JsonArray artifactsArray = null;
-        try {
-            Response response = MockedWebRequest.GET("src/main/resources/mockedJSON/win_chrome_builddetails.json");
+            Response response = WebRequest.GET(URL + apiSuffix);
             if (response != null) {
                 artifactsArray = response.asJsonArray("artifacts");
                 timestamp = response.asJsonObject().get("timestamp").getAsLong();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         HashMap artifacts = getArtifactRelativePaths(artifactsArray, URL + apiSuffix);
 
-        Response response = null;
-        try {
-            response = MockedWebRequest.GET("src/main/resources/mockedJSON/win_chrome_tests.json");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (response != null) {
-            JsonObject responseObject = response.asJsonObject();
+            Response secondResponse = null;
+            secondResponse = WebRequest.GET(URL + testReportSubstring + apiSuffix);
+        if (secondResponse != null) {
+            JsonObject responseObject = secondResponse.asJsonObject();
 
             //  testBuild.setNrOfTests(responseObject.get("totalCount").getAsInt());
             testBuild.setNrOfFailedTests(responseObject.get("failCount").getAsInt());

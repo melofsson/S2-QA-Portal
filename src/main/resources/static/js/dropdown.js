@@ -76,13 +76,15 @@ $(".errormessages-inner").on("click", function(){
     }
 });
 
-$(".testnames-inner").on("click", function(){
+
+
+/*$(".testnames-inner").on("click", function(){
     if ($(this).hasClass('selected-div')) {
         $(this).removeClass('selected-div');
     } else {
         $(this).addClass('selected-div');
     }
-});
+});*/
 
 
 

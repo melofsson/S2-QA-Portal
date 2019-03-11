@@ -1,13 +1,9 @@
 package se.soprasteria.s2qaportal.model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import se.soprasteria.s2qaportal.model.TestRun;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 
@@ -23,20 +19,20 @@ public class TestBuild implements Serializable {
     private int nrOfTests;
     private int nrOfSkippedTests;
     private int nrOfFailedTests;
-    List<TestCase> testCases;
+    List<TestRun> testRuns;
 
     public TestBuild(int number, String URL) {
         this.number = number;
         this.URL = URL;
-        testCases = new ArrayList<>();
+        testRuns = new ArrayList<>();
     }
 
-    public List<TestCase> getTestCases() {
-        return testCases;
+    public List<TestRun> getTestRuns() {
+        return testRuns;
     }
 
-    public void addTestCase (TestCase testCase) {
-        this.testCases.add(testCase);
+    public void addTestCase (TestRun testRun) {
+        this.testRuns.add(testRun);
     }
 
     public int getNumber() {

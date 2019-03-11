@@ -1,4 +1,4 @@
-package se.soprasteria.s2qaportal.model;
+package se.soprasteria.s2qaportal.model.old;
 
 import lombok.*;
 

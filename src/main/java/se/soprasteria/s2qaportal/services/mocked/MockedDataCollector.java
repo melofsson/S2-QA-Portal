@@ -1,7 +1,7 @@
-package se.soprasteria.s2qaportal.services.mocked;
+/*package se.soprasteria.s2qaportal.services.mocked;
 
 import com.google.gson.Gson;
-import se.soprasteria.s2qaportal.model.FailedTest;
+import se.soprasteria.s2qaportal.model.old.FailedTest;
 import se.soprasteria.s2qaportal.model.TestCase;
 import se.soprasteria.s2qaportal.model.TestJob;
 import se.soprasteria.s2qaportal.model.TestRun;
@@ -219,4 +219,4 @@ public class MockedDataCollector {
         }
         return testCases;
     }
-}
+}*/

@@ -1,7 +1,7 @@
 package se.soprasteria.s2qaportal.model.enums;
 
 import lombok.*;
-import se.soprasteria.s2qaportal.model.FailedTest;
+import se.soprasteria.s2qaportal.model.old.FailedTest;
 
 import java.util.ArrayList;
 import java.util.List;
